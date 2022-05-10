@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="resultViewModel"
+            type="puzzle.card.set.result.ResultViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+
+        <!-- 타이틀 -->
+        <TextView
+            style="@style/ResultTextView"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="@{resultViewModel.result}"/>
+
+        <!-- 남은 시간 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@string/remain_time"/>
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@{resultViewModel.resultTime}"/>
+        </LinearLayout><!-- 남은 시간  -->
+
+        <!-- 남은 카드 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@string/remain_card"/>
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@{resultViewModel.resultRemainCard}"/>
+        </LinearLayout><!-- 남은 카드 -->
+
+        <!-- 점수 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@string/point"/>
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@{resultViewModel.resultPoint}"/>
+        </LinearLayout><!-- 점수 -->
+
+        <!-- 틀린 수 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@string/miss"/>
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@{resultViewModel.resultMiss}"/>
+        </LinearLayout><!-- 틀린 수 -->
+
+        <!-- 셔플 사용 수 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@string/shuffle_count"/>
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@{resultViewModel.resultShuffleCount}"/>
+
+        </LinearLayout><!-- 셔플 사용 수 -->
+
+        <!-- 치트 사용 수 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@string/cheat_count"/>
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@{resultViewModel.resultCheatCount}"/>
+        </LinearLayout><!-- 치트 사용 수 -->
+
+        <!-- 슈퍼 치트 사용 수 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@string/super_cheat_count"/>
+
+            <TextView
+                style="@style/ResultTextView"
+                android:text="@{resultViewModel.resultSuperCheatCount}"/>
+        </LinearLayout><!-- 슈퍼 치트 사용 수 -->
+
+    </LinearLayout>
+
+</layout>

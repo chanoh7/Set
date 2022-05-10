@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">SET_puzzle</string>
+    <string name="version_name">1.0</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- home activity -->
+    <string name="game_start">Game Start</string>
+    <string name="help">How to Play</string>
+
+    <!-- help activity-->
+    <string name="how_to_play">
+        Simple Rule! Hard to solve!\n
+        쉬운 주제에 풀기 어려운 짝맞추기 퍼즐!\n
+        짝이 되는 세 장의 카드를 찾아보세요!\n\n
+
+        1. 카드의 속성은 넷\n
+        2. 각 속성이 가지는 값은 세 가지\n
+        3. 세 장의 카드를 골라서 네가지 속성 체크를 전부 통과해야됨\n\n
+
+        속성 체크에 통과할 조건은 둘 중 하나\n
+        1) 세 속성이 전부 같음\n
+        2) 세 속성이 전부 다름\n\n
+
+        속성은\n
+        색/모양/무늬/갯수\n\n
+
+        어려울 땐 치트!!\n
+        물론 공짜는 아닙니..(읍읍
+    </string>
+
+    <!-- game activity -->
+    <string name="start">Start</string>
+    <string name="remain_time">Remain Time</string>
+    <string name="remain_card">Remain Card</string>
+    <string name="point">Point</string>
+    <string name="miss">Miss</string>
+    <string name="shuffle_count">Shuffle</string>
+    <string name="cheat_count">Cheat</string>
+    <string name="super_cheat_count">Super Cheat</string>
+    <string name="no_answer">no answer! reshuffle cards.</string>
+    <string name="exit">Are you sure you want to exit?</string>
+    <string name="super_cheat_off">super cheat</string>
+    <string name="super_cheat_on">SUPER CHEAT!!!</string>
+
+    <!-- result activity -->
+    <string name="game_clear">GAME CLEAR!!</string>
+    <string name="time_over">TIME OVER</string>
+
+</resources>

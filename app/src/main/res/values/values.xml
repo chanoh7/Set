@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="card_elements">
+        <item>@drawable/card_green_dia_full</item>
+        <item>@drawable/card_green_dia_null</item>
+        <item>@drawable/card_green_dia_stripe</item>
+
+        <item>@drawable/card_green_round_full</item>
+        <item>@drawable/card_green_round_null</item>
+        <item>@drawable/card_green_round_stripe</item>
+
+        <item>@drawable/card_green_wave_full</item>
+        <item>@drawable/card_green_wave_null</item>
+        <item>@drawable/card_green_wave_stripe</item>
+
+
+        <item>@drawable/card_purple_dia_full</item>
+        <item>@drawable/card_purple_dia_null</item>
+        <item>@drawable/card_purple_dia_stripe</item>
+
+        <item>@drawable/card_purple_round_full</item>
+        <item>@drawable/card_purple_round_null</item>
+        <item>@drawable/card_purple_round_stripe</item>
+
+        <item>@drawable/card_purple_wave_full</item>
+        <item>@drawable/card_purple_wave_null</item>
+        <item>@drawable/card_purple_wave_stripe</item>
+
+
+        <item>@drawable/card_red_dia_full</item>
+        <item>@drawable/card_red_dia_null</item>
+        <item>@drawable/card_red_dia_stripe</item>
+
+        <item>@drawable/card_red_round_full</item>
+        <item>@drawable/card_red_round_null</item>
+        <item>@drawable/card_red_round_stripe</item>
+
+        <item>@drawable/card_red_wave_full</item>
+        <item>@drawable/card_red_wave_null</item>
+        <item>@drawable/card_red_wave_stripe</item>
+    </array>
+
+    <integer name="frame_time">250</integer>
+</resources>

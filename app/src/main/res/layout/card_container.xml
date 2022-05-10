@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="@dimen/cardContainer"
+        android:layout_height="@dimen/cardContainer"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:background="#aaff44">
+
+        <ImageView
+            android:id="@+id/elementLeft"
+            style="@style/CardTile"
+            tools:background="#aa4" />
+
+        <ImageView
+            android:id="@+id/elementCenter"
+            style="@style/CardTile"
+            tools:background="#6aa" />
+
+        <ImageView
+            android:id="@+id/elementRight"
+            style="@style/CardTile"
+            tools:background="#a6a" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,41 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/card_green_dia_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_green_dia_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_green_dia_stripe" android:duration="@integer/frame_time"/>
+
+    <item android:drawable="@drawable/card_green_round_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_green_round_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_green_round_stripe" android:duration="@integer/frame_time"/>
+
+    <item android:drawable="@drawable/card_green_wave_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_green_wave_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_green_wave_stripe" android:duration="@integer/frame_time"/>
+
+
+    <item android:drawable="@drawable/card_purple_dia_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_purple_dia_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_purple_dia_stripe" android:duration="@integer/frame_time"/>
+
+    <item android:drawable="@drawable/card_purple_round_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_purple_round_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_purple_round_stripe" android:duration="@integer/frame_time"/>
+
+    <item android:drawable="@drawable/card_purple_wave_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_purple_wave_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_purple_wave_stripe" android:duration="@integer/frame_time"/>
+
+
+    <item android:drawable="@drawable/card_red_dia_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_red_dia_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_red_dia_stripe" android:duration="@integer/frame_time"/>
+
+    <item android:drawable="@drawable/card_red_round_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_red_round_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_red_round_stripe" android:duration="@integer/frame_time"/>
+
+    <item android:drawable="@drawable/card_red_wave_full" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_red_wave_null" android:duration="@integer/frame_time"/>
+    <item android:drawable="@drawable/card_red_wave_stripe" android:duration="@integer/frame_time"/>
+
+</animation-list>
