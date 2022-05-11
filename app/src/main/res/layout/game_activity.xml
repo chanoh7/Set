@@ -122,7 +122,6 @@
                     android:background="@color/green"
                     android:onClick="@{gameViewModel::onClickCheat}"
                     android:text="치트"
-
                     android:textColor="@color/black"
                     android:textSize="20dp" />
 
@@ -143,6 +142,7 @@
                     android:textSize="20dp"
                     android:textOff="@string/super_cheat_off"
                     android:textOn="@string/super_cheat_on"
+                    android:checked="@{gameViewModel.superCheatEnabled}"
                     android:onClick="@{gameViewModel::onClickSuperCheat}"
                     app:background="@{gameViewModel.superCheatBgColor}"
                     app:textColor="@{gameViewModel.superCheatTextColor}" />

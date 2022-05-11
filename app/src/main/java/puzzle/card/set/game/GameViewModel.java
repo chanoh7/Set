@@ -4,10 +4,12 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.ToggleButton;
 
+import androidx.databinding.ObservableBoolean;
 import androidx.databinding.ObservableField;
 import androidx.databinding.ObservableInt;
 
 public class GameViewModel {
+    public final ObservableBoolean superCheatEnabled = new ObservableBoolean(false);
     public final ObservableInt startButtonVisibility = new ObservableInt(View.VISIBLE);
     public final ObservableInt superCheatTextColor = new ObservableInt(Color.WHITE);
     public final ObservableInt superCheatBgColor = new ObservableInt(Color.DKGRAY);
@@ -38,6 +40,8 @@ public class GameViewModel {
         startButtonVisibility.set(View.GONE);
         mViewContract.init();
         mViewContract.fieldSetUp();
+
+        enableSuperCheat(false);
     }
 
     public void onClickCheat(View view) {
@@ -49,10 +53,13 @@ public class GameViewModel {
     }
 
     public void onClickSuperCheat(View view) {
-        boolean checked = ((ToggleButton) view).isChecked();
+        enableSuperCheat(((ToggleButton) view).isChecked());
+    }
 
-        superCheatBgColor.set(checked ? Color.RED : Color.DKGRAY);
-        superCheatTextColor.set(checked ? Color.YELLOW : Color.WHITE);
-        mViewContract.superCheat(checked);
+    public void enableSuperCheat(boolean enable) {
+        superCheatEnabled.set(enable);
+        superCheatBgColor.set(enable ? Color.RED : Color.DKGRAY);
+        superCheatTextColor.set(enable ? Color.YELLOW : Color.WHITE);
+        mViewContract.superCheat(enable);
     }
 }
