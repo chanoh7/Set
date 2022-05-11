@@ -394,6 +394,10 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
             mGameField.remove(position);
             drawNewCard(position);
         }
+
+        //셋 사이에 경계선 추가
+        putSeparator();
+
         updateRemainCard();
 
         //답이 없게 뽑혔으면 재배치
@@ -401,6 +405,14 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
             shuffle();
             Toast.makeText(this, R.string.no_answer, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //셋 사이에 경계선 추가
+    private void putSeparator() {
+        ImageView separator = new ImageView(this);
+        separator.setBackgroundColor(Color.WHITE);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(10, LinearLayout.LayoutParams.MATCH_PARENT);
+        mBinding.flippedCardView.addView(separator, 0, layoutParams);
     }
 
     //남은 카드 수를 화면에 표시, 남은 카드가 0이면 게임 종료
