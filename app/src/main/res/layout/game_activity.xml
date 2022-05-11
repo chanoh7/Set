@@ -152,6 +152,25 @@
 
         </LinearLayout><!-- 메인 화면 -->
 
+        <!-- 게임 판과 뽑은 카드 목록 사이 경계선 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginVertical="5dp"
+            android:src="#af4"/>
+        
+        <!-- 뽑은 카드 목록 -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:background="#44f">
+            <LinearLayout
+                android:id="@+id/flipped_card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/cardContainer"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
         <!-- 시작버튼 -->
         <Button
             android:layout_width="match_parent"

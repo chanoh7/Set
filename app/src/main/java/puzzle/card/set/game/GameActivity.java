@@ -161,8 +161,8 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
     //카드 선택 정보 초기화
     private void resetPick() {
         try {
-            for (int i : mPickPosition) {
-                setCardFocus(i, FOCUS_OFF);
+            for (int position : mPickPosition) {
+                setCardFocus(position, FOCUS_OFF);
             }
         } catch (Exception e) {
             //do nothing(게임 처음 실행할 때, 판에 깔린 카드가 없어서 한 번 여기로 진입한다.)
@@ -216,6 +216,7 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
         }
         mGameField.clear();
         mBinding.gameBoard.removeAllViews();
+        mBinding.flippedCardView.removeAllViews();
         dealSetOfCards();
 
         initPick();
@@ -384,12 +385,14 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
         resetPick();
     }
 
-    //셋에 성공한 카드들을 없애고 3장 추가로 뽑기
+    //셋에 성공한 카드들을 뽑은 카드 목록으로 옮기고 3장 추가로 뽑기
     private void updateField() {
-        for (int i = 0; i < CardManager.KIND_OF_VALUES; ++i) {
-            mBinding.gameBoard.removeViewAt(mPickPosition[i]);
-            mGameField.remove(mPickPosition[i]);
-            drawNewCard(mPickPosition[i]);
+        for (int position : mPickPosition) {
+            LinearLayout pickedCard = (LinearLayout) (mBinding.gameBoard.getChildAt(position));
+            mBinding.gameBoard.removeViewAt(position);
+            mBinding.flippedCardView.addView(pickedCard, 0);
+            mGameField.remove(position);
+            drawNewCard(position);
         }
         updateRemainCard();
 
