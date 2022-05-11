@@ -148,6 +148,7 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
     @Override
     public void init() {
         mBinding.gameBoard.removeAllViews();
+        mBinding.flippedCardView.removeAllViews();
         mCardManager.reset();
         mGameField.clear();
 
@@ -216,7 +217,6 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
         }
         mGameField.clear();
         mBinding.gameBoard.removeAllViews();
-        mBinding.flippedCardView.removeAllViews();
         dealSetOfCards();
 
         initPick();
