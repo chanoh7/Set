@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -159,16 +160,19 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
 
     //카드 선택 정보 초기화
     private void resetPick() {
-        for (int i = 0; i < mGameField.size(); ++i) {
-            setCardFocus(i, FOCUS_OFF);
+        try {
+            for (int i : mPickPosition) {
+                setCardFocus(i, FOCUS_OFF);
+            }
+        } catch (Exception e) {
+            //do nothing(게임 처음 실행할 때, 판에 깔린 카드가 없어서 한 번 여기로 진입한다.)
         }
         initPick();
     }
 
     private void initPick() {
         mPickCount = 0;
-        for (int i = 0; i < CardManager.KIND_OF_VALUES; ++i)
-            mPickPosition[i] = NOTHING;
+        Arrays.fill(mPickPosition, NOTHING);
     }
 
     //게임 시작시 n장을 판에 깔고 타이머 시작
