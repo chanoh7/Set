@@ -117,8 +117,9 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
         mHandler = new Handler();
         //게임이 진행중이면 1초마다 반복되는 초시계 가동
         mOneSecStopwatch = () -> {
-            if (nowPlaying)
+            if (nowPlaying) {
                 runStopWatch();
+            }
         };
     }
 
@@ -209,8 +210,9 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
 
     //판 엎고 다시 섞어서 뽑기
     public void shuffle() {
-        if (!nowPlaying)
+        if (!nowPlaying) {
             return;
+        }
 
         for (Card card : mGameField) {
             mCardManager.bounce(card);
@@ -236,11 +238,11 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
 
     //답이 있기는 하는지 검사
     private boolean solver() {
-        for (int i = 0; i < mGameField.size() - 2; ++i)
-            for (int j = i + 1; j < mGameField.size() - 1; ++j)
+        for (int i = 0; i < mGameField.size() - 2; ++i) {
+            mPickPosition[0] = i;
+            for (int j = i + 1; j < mGameField.size() - 1; ++j) {
+                mPickPosition[1] = j;
                 for (int k = j + 1; k < mGameField.size(); ++k) {
-                    mPickPosition[0] = i;
-                    mPickPosition[1] = j;
                     mPickPosition[2] = k;
 
                     //답을 찾았으면 치트에 쓰기 위해 적어둔다.
@@ -250,6 +252,8 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
                         return true;
                     }
                 }
+            }
+        }
 
         return false;
     }
@@ -262,8 +266,9 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
 
         if (passedTime < TIME_LIMIT) {
             mHandler.postDelayed(mOneSecStopwatch, 1000);
-        } else
+        } else {
             gameFinish();
+        }
     }
 
     //카드 뽑아서 필드에 추가.
@@ -419,8 +424,9 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
     private void updateRemainCard() {
         mViewModel.remainCard.set(String.format("%2d", mCardManager.remain()));
 
-        if (mCardManager.remain() == 0)
+        if (mCardManager.remain() == 0) {
             gameFinish();
+        }
     }
 
     //남은 시간 표시
@@ -469,17 +475,14 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
         new AlertDialog.Builder(this)
                 .setMessage(R.string.exit)
                 .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                }).create().show();
+                .setPositiveButton(android.R.string.yes, (dialogInterface, i) -> finish())
+                .create()
+                .show();
     }
 
     @Override
     public void cheat() {
-        if (nowPlaying) {
+        if (nowPlaying && !mSuperCheating) {
             mStartTime -= TIME_COST_CHEAT;
             mCheatCount++;
             resetPick();
@@ -491,7 +494,12 @@ public class GameActivity extends AppCompatActivity implements GameViewModel.Vie
     @Override
     public void superCheat(boolean mode) {
         mSuperCheating = mode;
-        if (!mSuperCheating) {
+        resetPick();
+        if (mSuperCheating) {
+            mPickPosition[0] = mSolversAnswer[0];
+            mPickPosition[1] = mSolversAnswer[1];
+            resetPick();
+        } else {
             //슈퍼치트를 끌 때, 슈퍼치트 사용에 의해 답이 없는 상태가 되었는지 검사해서 답이 없으면 재배치한다.
             if (!solver()) {
                 shuffle();
